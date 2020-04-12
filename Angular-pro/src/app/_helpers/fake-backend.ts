@@ -5,7 +5,12 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { User } from '@app/_models';
 
-const users: User[] = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
+const users: User[] = [{ id: 1, username: 'user1', password: 'user1', firstName: 'Alexa', lastName: 'Douglas', role:'user1' },
+                        { id: 2, username: 'user2', password: 'user2', firstName: 'James', lastName: 'Marsahall', role:'user2'},
+                        { id: 3, username: 'user3', password: 'user3', firstName: 'John', lastName: 'Wade', role:'user3' },
+                        { id: 4, username: 'user4', password: 'user4', firstName: 'Mona', lastName: 'Das', role:'user4'},
+                        { id: 5, username: 'user5', password: 'user5', firstName: 'Supriya', lastName: 'Das', role:'Admin1'},
+                        { id: 6, username: 'user6', password: 'user6', firstName: 'Lalitha', lastName: 'Srivalli', role:'Admin2'}];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -41,7 +46,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 id: user.id,
                 username: user.username,
                 firstName: user.firstName,
-                lastName: user.lastName
+                lastName: user.lastName,
+                role: user.role
             })
         }
 
@@ -65,7 +71,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function isLoggedIn() {
-            return headers.get('Authorization') === `Basic ${window.btoa('test:test')}`;
+            return headers.get('Authorization') === `Basic ${window.btoa('user1:user1')}` || 
+            `Basic ${window.btoa('user2:user2')}` ||`Basic ${window.btoa('user3:user3')}` ||
+            `Basic ${window.btoa('user5:user5')}` ||`Basic ${window.btoa('user4:user4')}` ||
+            `Basic ${window.btoa('user6:user6')}`;
         }
     }
 }
