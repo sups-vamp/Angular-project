@@ -4,7 +4,7 @@
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" routerLink="/courses">Courses</a>
         <a class="nav-item nav-link" routerLink="/features">Features</a>
-        <a class="nav-item dropdown">
+        <a class="nav-item dropdown ml-auto">
             <a class="nav-link dropdown-toggle" href ="#" id="navbardrop" data-toggle="dropdown">
               Accounts
             </a>
@@ -17,9 +17,22 @@
 </nav>
 
 
-
-
 <!-- main app container -->
 <div class="container-fluid">
     <router-outlet></router-outlet>
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <nav class="navbar navbar-expand" *ngIf="currentUser">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/">Home</a>
+            <a class="nav-item nav-link" routerLink="/courses">Courses</a>
+            <a class="nav-item nav-link" routerLink="/features">Features</a>
+            <a class="nav-item nav-link" routerLink="/profile">Profile</a>          
+        </div>
+        <span class="navbar-text justify-content-end">
+            MAQ Software &copy; 2019
+          </span>
+    </nav>
 </div>
