@@ -1,0 +1,18 @@
+.container-fluid{
+    margin: 3% 0px;
+
+    .welcomeuser{
+        .col-md-6{
+            padding: 0 !important;
+        }
+        
+        .text{
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
+
+    img{
+        max-width: 100%;
+    }
+}

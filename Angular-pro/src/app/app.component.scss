@@ -2,6 +2,31 @@
     padding: 0px;
     margin: 0px;
 }
+.header{
+    .navbar{
+      padding: 0px 5px;
+    }
+
+    a{
+      padding : 15px;
+    }
+
+    .bg-light{
+      background-color: white !important;
+    }
+
+    .navbar a:hover {
+      background: rgb(230, 225, 225);
+    }
+    img, .navbar-brand {
+      padding: 0px !important;
+    }
+
+    .nav-link{
+      color: black;
+    }
+}
+
 .footer{
     .navbar {
         overflow: hidden;
